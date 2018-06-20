@@ -54,6 +54,7 @@
         #credits a {
             color:#b297a2;
         }
+         * { touch-action: none; }
     </style>
 
 </head>
@@ -154,11 +155,9 @@
     }
 
     function handleTouchStart(event) {
-        if (event.touches.length > 1) {
-            event.preventDefault();
-            mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
-            isBlowing = true;
-        }
+        event.preventDefault();
+        mousePos = {x:event.touches[0].pageX, y:event.touches[0].pageY};
+        isBlowing = true;
     }
 
     function handleTouchEnd(event) {
